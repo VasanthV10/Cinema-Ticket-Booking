@@ -1,4 +1,4 @@
-# Cinema-ticket
+# MovieTicketBooking
 Online movie Ticket Booking system using Django/python
 
 Steps to be followed for local deployment:
