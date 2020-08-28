@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <style>
+            div {
+                height: 100px;
+                width: 500px;
+                border: 2px solid red;
+                border-radius: 8px;
+                background-color: powderblue;
+              }
+}
+              </style>
+    </head>
+    <body>
+            <nav class="w3-bar w3-black">
+                    <!--<a href="/cinema/" class="w3-button w3-bar-item">Home</a>
+                    <a href="#Theatre" class="w3-button w3-bar-item">Theatre</a>
+                    <a href="/aboutus/" class="w3-button w3-bar-item">About us</a>
+                    <a href="/contact/" class="w3-button w3-bar-item">Contact</a>
+                    {% if Studentname == None %} 
+                    <a href="/register/" class="w3-button w3-bar-item" style="float:right">Signup</a>
+                    <a href="/login/" class="w3-button w3-bar-item" style="float:right">Login</a>
+                    {% else %}
+                    <a href="/signout/signout" class="w3-button w3-bar-item" style="float:right">signout</a>
+                    <a href="/userprofile/" class="w3-button w3-bar-item" style="float:right">You are Signed in as {{ Studentname }}</a>
+                    {% endif %} -->
+                    <a href="/signout/signout" class="w3-button w3-bar-item" style="float:right">signout</a>
+                    <a href="/portal/" class="w3-button w3-bar-item" style="float:right">Add Movies</a>
+                    <a href=# class="w3-button w3-bar-item" style="float:right"> You are signed in as {{ user.tname }}</a>
+                  </nav>
+        <h3><b>Welcome!!!</b></h3></br></br>
+        <h4>The following are the reviews by the users on the Theatre:-</h4>
+            <section>
+                    {% for c in contact %}
+                    <div class="contactform">
+                      Name:{{c.fname}}&nbsp;{{c.lname}}</br>
+                      Review:{{c.content}}
+                    </div>
+                    {% endfor %}
+                  </section>
+    </body>
+</html>

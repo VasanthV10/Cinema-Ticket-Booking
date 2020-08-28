@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link rel="stylesheet" href=" https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css" media="all">
+<link rel="stylesheet" href="{% static 'navbar1.css' %}" type="text/css" media="all">
+    
+    <script src="{ % static 'jquery-2.2.3.min.js' %}"></script>
+  
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color:grey;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color:cornflowerblue;
+}
+    .bs-example{
+        margin: 20px;        
+    }
+h1 {
+  color: blue;
+}
+</style>
+</head>
+<body background-color="lightblue">
+  <form action='/times/' method="post">
+    {% csrf_token %}
+<!-- Navigation -->
+<!-- Slide Show -->
+<nav class="w3-bar w3-black">
+    <a href="/cinema/" class="w3-button w3-bar-item">Home</a>
+    <a href="#Theatre" class="w3-button w3-bar-item">Theatre</a>
+    <a href="/aboutus/" class="w3-button w3-bar-item">About us</a>
+    <a href="/contact/" class="w3-button w3-bar-item">Contact</a>
+    {% if Studentname == None %}
+    <a href="/register/" class="w3-button w3-bar-item" style="float:right">Signup</a>
+    <a href="/login/" class="w3-button w3-bar-item" style="float:right">Login</a>
+    {% else %}
+    <a href="/signout/signout" class="w3-button w3-bar-item" style="float:right">signout</a>
+    <a href="/userprofile/" class="w3-button w3-bar-item" style="float:right">You are Signed in as {{ Studentname }}</a>
+    {% endif %}
+  </nav>
+<br>
+<br>
+{% for key,value in tname.items %}
+<h1> {{key}}: </h1>
+<div class="bs-example">
+  {% for t in value %}
+      <button type="button" style="margin-right: 100px" class="btn btn-outline-primary"><a href="/seat/">{{t}}</a></button>
+   {% endfor %}    
+</div>
+{% endfor %}
+</div>
+<br>
+<br>
+</form>
+</body>
+</html>
+

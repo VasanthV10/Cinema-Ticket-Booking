@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<body>
+  <nav class="w3-bar w3-black">
+    <a href="/cinema/" class="w3-button w3-bar-item">Home</a>
+    <a href="/aboutus/" class="w3-button w3-bar-item">About us</a>
+    <a href="/contact/" class="w3-button w3-bar-item">Contact</a>
+    {% if Studentname == None %}
+    <a href="/register/" class="w3-button w3-bar-item" style="float:right">Signup</a>
+    <a href="/login/" class="w3-button w3-bar-item" style="float:right">Login</a>
+    {% else %}
+    <a href="/signout/signout" class="w3-button w3-bar-item" style="float:right">signout</a>
+    <a href="/userprofile/" class="w3-button w3-bar-item" style="float:right">You are Signed in as {{ Studentname }}</a>
+    {% endif %}
+  </nav>
+
+<!-- Slide Show -->
+<section>
+  <img class="mySlides" src="https://manhattannews.wpengine.com/wp-content/uploads/2018/11/CHEN-tkts-copy.jpg" height=600
+  style="width:100%">
+  <img class="mySlides" src="https://www.pymnts.com/wp-content/uploads/2017/03/shutterstock_459149692.jpg" height=600
+  style="width:100%">
+  <img class="mySlides" src="https://digitalrunn.com/wp-content/uploads/2018/01/Book-early-twitter.png_thump.png" height=600
+  style="width:100%">
+</section>
+
+<!-- Band Description -->
+<section class="w3-container w3-center w3-content" style="max-width:600px">
+  <h2 class="w3-wide">Online Tickets</h2>
+  <p class="w3-opacity"><i>We Hate queues!!</i></p>
+  <p class="w3-justify">We can get the movie tickets from our home without even going to the theatres.</p>
+  To add your theatre into our website click <a href="/movieregistration/">Theatre Registration</a>
+
+</section>
+<script>
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 3000);
+}
+</script>
+
+</body>
+</html>

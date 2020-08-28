@@ -1,0 +1,107 @@
+
+<html>
+    {% load static %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+	<title>Login page</title>
+	<style>
+	body {font-family: Arial;
+  		background:url("https://www.barraques.cat/pngfile/big/24-248302_color-powder-wallpaper-wallpapersafari-baby-blue-paper-blue.jpg");
+	}
+	form {border: 3px solid #f1f1f1;}
+
+	input[type=text], input[type=password] {
+	  width: 50%;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+	}
+
+	button {
+	  background-color: #054389;
+	  color: white;
+	  padding: 14px 20px;
+	  margin: 8px 0;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	}
+
+	button:hover {
+	  opacity: 0.8;
+	}
+
+	.registerbtn {
+	  width: auto;
+	  padding: 10px 18px;
+	  background-color: #054389;
+	}
+	.log {
+	  width: auto;
+	  padding: 10px 48px;
+	}
+	.imgcontainer {
+	  text-align: center;
+	  margin: 24px 0 12px 0;
+	}
+
+	img.avatar {
+	  width: 30%;
+	  border-radius: 40%;
+	}
+
+	.container {
+	  padding: 16px;
+	}
+
+	span.psw {
+	  float: right;
+	  padding-top: 16px;
+	}
+
+	/* Change styles for span and cancel button on extra small screens */
+	@media screen and (max-width: 300px) {
+	  span.psw {
+		 display: block;
+		 float: none;
+	  }
+	  .registerbtn {
+		 width: 100%;
+	  }
+	  .log {
+		 width: 100%;
+	  }
+		}
+	</style>
+</head>
+<body>
+	<nav class="w3-bar w3-black">
+		<a href="/cinema/" class="w3-button w3-bar-item">Home</a>
+		<a href="/aboutus/" class="w3-button w3-bar-item">About us</a>
+		<a href="/contact/" class="w3-button w3-bar-item">Contact</a>
+		<a href="/register/" class="w3-button w3-bar-item" style="float:right">Signup</a>
+	</nav>		
+<center>
+	<h2>Login</h2>
+</center>
+<form name = "form" method="post">
+  {% csrf_token %}
+  <div class="imgcontainer">
+    <img src="{% static 'images/1.jpg' %}" alt="login" class="avatar">
+  </div>
+	<center>
+	  <div class="container">
+		<label for="uname"><b>Email-id</b></label>
+		<input type="text" placeholder="Enter Email-id" name="email" required>
+		<br/>
+		<label for="psw"><b>Password</b></label>
+		<input type="password" placeholder="Enter Password" name="psw" required><br/>
+    <button type="submit" class="log">Login</button>
+	</center>	
+</form>
+
+</body>
+</html>

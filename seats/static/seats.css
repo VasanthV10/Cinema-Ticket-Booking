@@ -1,0 +1,63 @@
+#holder{    
+height:750px;    
+width:850px;
+background-color:#F5F5F5;
+border:1px solid #A4A4A4;
+margin-left:20px;   
+}
+#place {
+position:relative;
+margin:10px;
+}
+#place a{
+font-size:0.0em;
+}
+#place li
+{
+ list-style: none outside none;
+ position: absolute;   
+}    
+#place li:hover
+{
+background-color:red;      
+} 
+#place .seat{
+background:url("icon-seat-1.png") no-repeat scroll 0 0 ;
+height:33px;
+width:33px;
+display:block;   
+}
+#place .selectedSeat
+{ 
+background-image:url("icon-seat-2.png");          
+}
+#place .selectingSeat
+{ 
+background-image:url("icon-seat-3.png");        
+}
+#place .row-5, #place .row-6, #place .row-7, #place .row-8, #place .row-9,
+#place .row-10,#place .row-11,#place .row-12,#place .row-13,#place .row-14{
+margin-top:30px;
+}
+#place .row-15, #place .row-16, #place .row-17, #place .row-18, #place .row-19,
+#place .row-20,#place .row-21,#place .row-22,#place .row-23,#place .row-24{
+margin-top:30px;
+}
+
+#place .col-6, #place .col-7, #place .col-8, #place .col-9,#place .col-10,
+#place .col-11,#place .col-12,#place .col-13,#place .col-14,#place .col-15
+{
+margin-left:40px;
+}
+#place  .col-16, #place .col-17, #place .col-18, #place .col-19,#place .col-20
+#place  .col-21, #place .col-22, #place .col-23, #place .col-24,#place .col-25
+{
+margin-left:80px;
+}
+#seatDescription li{
+vertical-align:middle;    
+list-style: none outside none;
+padding-left:35px;
+height:35px;
+float:left;
+}

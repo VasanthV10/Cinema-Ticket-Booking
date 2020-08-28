@@ -1,0 +1,89 @@
+<!DOCTYPE html> 
+<html> 
+<body> 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none}
+body {
+  background:url("https://www.tapetenshop.com/out/pictures/generated/product/1/540_340_75/tapete-grandeco-nordic-elegance-37-NG1107.jpg");
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+}
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+<iframe width="1530" height="345" src="{{link.trailer}}">
+</iframe>
+<div class="w3-container">
+  <h2>Description</h2>
+  <p>{{link.subject}}</p>
+</div>
+<div class="w3-container">
+  <h2>Cast</h2>
+  <p>The cast involved in the movie</p>
+</div>
+<div class="w3-center">
+  
+  <button class="w3-button demo" onclick="currentDiv(1)">Actor</button> 
+  <button class="w3-button demo" onclick="currentDiv(2)">Actress</button> 
+  <!--<button class="w3-button demo" onclick="currentDiv(3)">Director</button> -->
+</div>
+<div class="w3-content" style="max-width:300px;max-height: 500px;">
+  <img class="mySlides" src="{{alink.apic}}" style="width:100%">
+  <img class="mySlides" src="{{aslink.aspic}}" style="width:100%">
+</div>
+<form method="POST">
+    {% csrf_token %}
+  <button class="button button2" style="width:100%">Book</button><br/>
+</form>
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-red";
+}
+</script>
+
+</body> 
+</html>
